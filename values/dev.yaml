@@ -1,0 +1,6 @@
+imagePullSecrets:
+  - name: ecr-repo
+image:
+  repository: jibeshshrestha/web-local
+  tag: latest
+  pullPolicy: Always
