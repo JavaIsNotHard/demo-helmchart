@@ -2,8 +2,8 @@ imagePullSecrets:
   - name: docker-registry-creds
 image:
   repository: jibeshshrestha/web-local
-  tag: latest
-  pullPolicy: Always
+  tag: 1.16.0
+  pullPolicy: IfNotPresent
 
 service:
   name: dev
