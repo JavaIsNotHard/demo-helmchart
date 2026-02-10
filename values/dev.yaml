@@ -5,6 +5,10 @@ image:
   tag: latest
   pullPolicy: Always
 
+env:
+  - name: HOSTNAME
+    value: "0.0.0.0"
+
 service:
   name: dev
   enabled: true

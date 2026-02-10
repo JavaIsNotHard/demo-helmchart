@@ -1,0 +1,315 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myapp=jibeshshrestha/web-local
+    argocd-image-updater.argoproj.io/myapp.helm.image-name: image.repository
+    argocd-image-updater.argoproj.io/myapp.helm.image-tag: image.tag
+    argocd-image-updater.argoproj.io/myapp.ignore-tags: dev
+    argocd-image-updater.argoproj.io/myapp.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{"argocd-image-updater.argoproj.io/image-list":"myapp=jibeshshrestha/web-local","argocd-image-updater.argoproj.io/myapp.helm.image-name":"image.repository","argocd-image-updater.argoproj.io/myapp.helm.image-tag":"image.tag","argocd-image-updater.argoproj.io/myapp.ignore-tags":"dev","argocd-image-updater.argoproj.io/myapp.update-strategy":"latest","argocd-image-updater.argoproj.io/write-back-method":"git:secret:argocd/git-creds"},"name":"argocd-app","namespace":"argocd"},"spec":{"destination":{"namespace":"default","server":"https://kubernetes.default.svc"},"project":"default","source":{"helm":{"valueFiles":["values.yaml","values/dev.yaml"],"values":"imagePullSecrets: []\n"},"path":".","repoURL":"https://github.com/JavaIsNotHard/demo-helmchart","targetRevision":"main"},"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["CreateNamespace=true"]}}}
+  creationTimestamp: "2026-02-09T17:06:35Z"
+  generation: 490
+  labels:
+    argocd-image-updater.argoproj.io/enabled: "true"
+  name: argocd-app
+  namespace: argocd
+  resourceVersion: "337393"
+  uid: 674c5211-9ef4-4591-a116-46e0ab864595
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values.yaml
+      - values/dev.yaml
+      values: |
+        imagePullSecrets: []
+    path: .
+    repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+status:
+  controllerNamespace: argocd
+  health:
+    lastTransitionTime: "2026-02-10T05:45:57Z"
+    status: Healthy
+  history:
+  - deployStartedAt: "2026-02-09T17:27:55Z"
+    deployedAt: "2026-02-09T17:27:58Z"
+    id: 3
+    initiatedBy:
+      username: admin
+    revision: e64426dd803d8ca5d4a4ae40929c32c96e089ad5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-09T17:28:56Z"
+    deployedAt: "2026-02-09T17:28:56Z"
+    id: 4
+    initiatedBy:
+      username: admin
+    revision: e64426dd803d8ca5d4a4ae40929c32c96e089ad5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-09T17:31:21Z"
+    deployedAt: "2026-02-09T17:31:21Z"
+    id: 5
+    initiatedBy:
+      username: admin
+    revision: e64426dd803d8ca5d4a4ae40929c32c96e089ad5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-09T17:31:46Z"
+    deployedAt: "2026-02-09T17:31:47Z"
+    id: 6
+    initiatedBy:
+      username: admin
+    revision: e64426dd803d8ca5d4a4ae40929c32c96e089ad5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T04:49:09Z"
+    deployedAt: "2026-02-10T04:49:11Z"
+    id: 7
+    initiatedBy:
+      username: admin
+    revision: 77a823db4ee691a432c15476c6de071659eca656
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T05:16:14Z"
+    deployedAt: "2026-02-10T05:16:18Z"
+    id: 8
+    initiatedBy:
+      username: admin
+    revision: 29c6ac1d7ba75b8ae67e0c3f2942b97cb4f5c918
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T05:16:22Z"
+    deployedAt: "2026-02-10T05:16:30Z"
+    id: 9
+    initiatedBy:
+      automated: true
+    revision: 77a823db4ee691a432c15476c6de071659eca656
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T05:16:31Z"
+    deployedAt: "2026-02-10T05:16:34Z"
+    id: 10
+    initiatedBy:
+      automated: true
+    revision: 29c6ac1d7ba75b8ae67e0c3f2942b97cb4f5c918
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T05:37:45Z"
+    deployedAt: "2026-02-10T05:37:48Z"
+    id: 11
+    initiatedBy:
+      username: admin
+    revision: 1984d54a21378e437bc3ac37e0c03e8c47063ff5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  - deployStartedAt: "2026-02-10T05:45:35Z"
+    deployedAt: "2026-02-10T05:45:36Z"
+    id: 12
+    initiatedBy:
+      automated: true
+    revision: 8172c020b4cf04e4e85fcc041b419cffa0f300e5
+    source:
+      helm:
+        valueFiles:
+        - values.yaml
+        - values/dev.yaml
+        values: |
+          imagePullSecrets: []
+      path: .
+      repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+      targetRevision: main
+  operationState:
+    finishedAt: "2026-02-10T05:45:36Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        prune: true
+        revision: 8172c020b4cf04e4e85fcc041b419cffa0f300e5
+        source:
+          helm:
+            valueFiles:
+            - values.yaml
+            - values/dev.yaml
+            values: |
+              imagePullSecrets: []
+          path: .
+          repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+          targetRevision: main
+        syncOptions:
+        - CreateNamespace=true
+    phase: Succeeded
+    startedAt: "2026-02-10T05:45:35Z"
+    syncResult:
+      resources:
+      - group: ""
+        hookPhase: Running
+        kind: ServiceAccount
+        message: serviceaccount/argocd-app-nextjs-helm-chart unchanged
+        name: argocd-app-nextjs-helm-chart
+        namespace: default
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/argocd-app-nextjs-helm-chart unchanged
+        name: argocd-app-nextjs-helm-chart
+        namespace: default
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - jibeshshrestha/web-local:latest
+        kind: Deployment
+        message: deployment.apps/argocd-app-nextjs-helm-chart configured
+        name: argocd-app-nextjs-helm-chart
+        namespace: default
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: 8172c020b4cf04e4e85fcc041b419cffa0f300e5
+      source:
+        helm:
+          valueFiles:
+          - values.yaml
+          - values/dev.yaml
+          values: |
+            imagePullSecrets: []
+        path: .
+        repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+        targetRevision: main
+  reconciledAt: "2026-02-10T06:02:19Z"
+  resourceHealthSource: appTree
+  resources:
+  - kind: Service
+    name: argocd-app-nextjs-helm-chart
+    namespace: default
+    status: Synced
+    version: v1
+  - kind: ServiceAccount
+    name: argocd-app-nextjs-helm-chart
+    namespace: default
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: argocd-app-nextjs-helm-chart
+    namespace: default
+    status: Synced
+    version: v1
+  sourceHydrator: {}
+  sourceType: Helm
+  summary:
+    images:
+    - jibeshshrestha/web-local:latest
+  sync:
+    comparedTo:
+      destination:
+        namespace: default
+        server: https://kubernetes.default.svc
+      source:
+        helm:
+          valueFiles:
+          - values.yaml
+          - values/dev.yaml
+          values: |
+            imagePullSecrets: []
+        path: .
+        repoURL: https://github.com/JavaIsNotHard/demo-helmchart
+        targetRevision: main
+    revision: 8172c020b4cf04e4e85fcc041b419cffa0f300e5
+    status: Synced
