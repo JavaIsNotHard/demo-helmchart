@@ -1,6 +1,22 @@
 imagePullSecrets:
-  - name: ecr-repo
+  - name: docker-registry-creds
 image:
   repository: jibeshshrestha/web-local
   tag: latest
   pullPolicy: Always
+
+service:
+  name: dev
+  enabled: true
+  type: LoadBalancer
+  port: 3000
+
+resources:
+ limits:
+   cpu: 100m
+   memory: 250Mi
+ requests:
+   cpu: 50m
+   memory: 100Mi
+
+replicaCount: 1
